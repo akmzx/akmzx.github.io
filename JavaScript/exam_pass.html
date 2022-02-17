@@ -33,16 +33,22 @@
             console.log(css);
 
             if (html >= 50 && js >= 50 && css >= 50){
-                document.write ('<h1>This student is Pass!</h1>');
+                document.write ('<h1>This student Pass!</h1>');
             } else {
-                document.write ('<h1>This student is Fail!</h1>');
+                document.write ('<h1>This student Fail!</h1>');
             }
 
-            if (html > 80 || js > 80 || css > 80){
-                document.write ('<h1>This student had distinction(s)!</h1>');
+            if (html > 80 && js > 80 && css > 80){
+                document.write ('<h1>This student pass all subjects with distinctions!</h1>');
+            } else {
+                if (html > 80){
+                document.write ( '<h1>This student pass HTML with distinction.</h1>')
+                } if (js > 80){
+                document.write('<h1>This student pass JavaScript with distinction.</h1>')
+                } if (css > 80){
+                document.write('<h1>This student pass CSS with distinction.</h1>')
+                }
             }
-                
-
         }
     </script>
 </body>
