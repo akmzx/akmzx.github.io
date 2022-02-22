@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplying Numbers</title>
+</head>
+<body>
+    <script>
+        let enter_num = prompt("Enter a number")
+        for (let n = 1; n <=12; n++){
+            document.write(`<h3>${enter_num} x ${n} = ${[n]*enter_num}</h3>`);
+         }
+        
+
+        for (let m = 5; m > 0; m--){
+            for(let n = 1; n <= m; n++) {
+                document.write('*');
+            }
+            document.write('<br>');
+        }
+    </script>
+</body>
+</html>
