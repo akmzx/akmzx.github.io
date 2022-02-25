@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="header">CSS with DOM</h1>
+    <img src="dom-image-1.png" alt="" width="200" height="220" id="domimg1">
+    <br><br>
+    <button onclick="clickChange()">Click</button>
+    <br><br>
+    <img src="dom-image-2.jpg" alt="" id="domimg2" width="300" height="150" onmouseover="big()" onmouseout="normal()">
+    <script>
+        function clickChange(){
+            // alert("Hello");
+            document.querySelector('#header').style.color = 'red';
+            document.querySelector('#header').style.backgroundColor = 'black';
+
+            let domimg1 = document.querySelector('#domimg1');
+            domimg1.style.width = '400px';
+            domimg1.style.height = '420px';
+        }
+
+        function big(){
+            // alert('mouse over');
+            let domimg2 = document.querySelector("#domimg2");
+            domimg2.style.width = '500px';
+            domimg2.style.height = '300px';
+        }
+
+        function normal() {
+            // alert('mouse out')
+            let domimg2 = document.querySelector('#domimg2');
+            domimg2.style.width = '300px';
+            domimg2.style.height = '150px';
+        }
+    </script>
+</body>
+</html>
