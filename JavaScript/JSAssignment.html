@@ -1,49 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JS_Assignment</title>
-</head>
-<body>
+  </head>
+  <body>
     <form action="request.php" method="post">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="cus_name">
-        <br><br>
-        <label for="age">Age</label>
-        <input type="number" id="age" name="cus_age">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="cus_name" />
+      <br /><br />
+      <label for="age">Age</label>
+      <input type="number" id="age" name="cus_age" />
     </form>
-    <br>
+    <br />
     <button onclick="showTable()">Show</button>
-    <br><br>
+    <br /><br />
     <table id="table" border="1" cellspacing="0" cellpadding="20">
-        <thead>
-            <tr>
-                <th>No</th>
-                <th>Name</th>
-                <th>Age</th>
-            </tr>
-        </thead>
-        <tbody id="tbody">
-
-        </tbody>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Name</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
     </table>
 
     <script>
-        let i = 1;
-        function showTable(){
-            let tbody = document.querySelector("#tbody");
-            let cus_name = document.querySelector("#name").value;
-            let cus_age = document.querySelector("#age").value;
+      let i = 1;
+      function showTable() {
+        let tbody = document.querySelector("#tbody");
+        let cus_name = document.querySelector("#name").value;
+        let cus_age = document.querySelector("#age").value;
 
-            let myData = `<tr>
+        let myData = `<tr>
                         <td>${i++}</td>
                         <td>${cus_name}</td>
                         <td>${cus_age}</td>
-                     </tr>`
-            tbody.innerHTML += myData;
-        }
+                     </tr>`;
+        tbody.innerHTML += myData;
+      }
     </script>
-</body>
+  </body>
 </html>

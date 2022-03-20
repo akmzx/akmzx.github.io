@@ -1,42 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
+  </head>
+  <body>
     <script>
-        //Function
+      //Function
 
-        function funName(){
-            document.write('<h3>Hello Function</h3>');
-        }
-        funName();
+      function funName() {
+        document.write("<h3>Hello Function</h3>");
+      }
+      funName();
 
-        function result(num1,num2,num3){
+      function result(num1, num2, num3) {
+        let res = num1 + num2 + num3;
+        document.write(`<h3>${res}</h3>`);
+      }
 
-            let res = num1 + num2 + num3;
-            document.write(`<h3>${res}</h3>`);
-        }
+      result(10, 20, 20);
 
-        result(10,20,20);
+      function subResult(num1 = 30, num2 = 20) {
+        let subRes = num1 - num2;
+        document.write(`<h3>${subRes}</h3>`);
+      }
+      subResult();
+      subResult(20, 10);
 
-        function subResult(num1=30,num2=20){
-            let subRes = num1 - num2;
-            document.write(`<h3>${subRes}</h3>`);
-        }
-        subResult();
-        subResult(20,10);
+      // Object
 
-        // Object
-
-        let laptop = {name:'Apple',type:'M1',price:2000000};
-        document.write(laptop.price);
-        document.write(laptop['name']);
-
+      let laptop = { name: "Apple", type: "M1", price: 2000000 };
+      document.write(laptop.price);
+      document.write(laptop["name"]);
     </script>
-</body>
+  </body>
 </html>

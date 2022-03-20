@@ -1,62 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        .heading{
-            color: red;
-        }
+      .heading {
+        color: red;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1 id="cElement" onclick="attribute()">Create Element</h1>
     <button onclick="addElement()">Add Element</button>
-    <br><br>
-    <input type="text" name="name" id="name">
+    <br /><br />
+    <input type="text" name="name" id="name" />
     <button onclick="adding()">Add</button>
     <ul id="ul">
-        <li>Apple</li>
-        <li>Dell</li>
+      <li>Apple</li>
+      <li>Dell</li>
     </ul>
 
     <script>
-        function addElement() {
-            //alert("Hello");
-            let h3 = document.createElement('h3');
-            console.log(h3);
-            h3.innerText = 'Create h3 Element';
-            console.log(h3);
-            document.body.appendChild(h3);
+      function addElement() {
+        //alert("Hello");
+        let h3 = document.createElement("h3");
+        console.log(h3);
+        h3.innerText = "Create h3 Element";
+        console.log(h3);
+        document.body.appendChild(h3);
+      }
 
+      function adding() {
+        //alert('Hello')
+        let name = document.querySelector("#name").value;
+        console.log(name);
+        let li = document.createElement("li");
+        li.innerText = name;
+        let ul = document.querySelector("#ul");
+        ul.appendChild(li);
+      }
+
+      function attribute() {
+        // alert('Hello')
+
+        let cElement = document.querySelector("#cElement");
+        let attr = cElement.getAttribute("class");
+        console.log(attr);
+        if (attr) {
+          cElement.removeAttribute("class");
+        } else {
+          cElement.setAttribute("class", "heading");
         }
-
-        function adding() {
-            //alert('Hello')
-            let name = document.querySelector('#name').value;
-            console.log(name);
-            let li = document.createElement('li');
-            li.innerText = name;
-            let ul = document.querySelector('#ul');
-            ul.appendChild(li);
-
-        }
-
-        function attribute() {
-            // alert('Hello')
-
-            let cElement = document.querySelector('#cElement');
-            let attr = cElement.getAttribute('class');
-            console.log(attr);
-            if (attr){
-                cElement.removeAttribute('class');
-            }else{
-                cElement.setAttribute('class','heading');
-
-            }
-        }
+      }
     </script>
-</body>
+  </body>
 </html>

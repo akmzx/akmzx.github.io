@@ -1,0 +1,233 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: fredoka;
+}
+
+body {
+  background: linear-gradient(to top, rgb(190, 194, 196), rgb(226 231 233));
+}
+
+@font-face {
+  font-family: fredoka;
+  src: url(../Fredoka/static/Fredoka/Fredoka-Regular.ttf);
+}
+
+@font-face {
+  font-family: lobster;
+  src: url(../Lobster/Lobster-Regular.ttf);
+}
+
+.logo {
+  width: 100px;
+  height: 70px;
+  margin-left: 40px;
+  margin-top: 10px;
+  pointer-events: none;
+  cursor: none;
+}
+
+.navbar {
+  background-color: white;
+}
+
+.brand_name {
+  position: absolute;
+  top: 30px;
+  left: 80px;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: lobster;
+  cursor: none;
+  color: black;
+}
+
+.navbar div {
+  display: inline-block;
+}
+
+.navbar ul {
+  float: right;
+}
+
+.navbar li {
+  display: inline-block;
+  margin-top: 30px;
+  margin-right: 40px;
+  text-transform: uppercase;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.navbar ul li a:hover {
+  letter-spacing: 4px;
+  transition-duration: 0.5s;
+  color: #2b8ab8;
+}
+
+.img {
+  width: 100%;
+  height: 550px;
+}
+
+.background_text {
+  position: absolute;
+  top: 250px;
+  left: 100px;
+}
+
+.perfect {
+  font-family: lobster;
+  font-weight: unset;
+  margin-bottom: 25px;
+}
+
+.shop {
+  color: #2b8ab8;
+  border: 1px solid #2b8ab8;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.shop:hover {
+  cursor: pointer;
+  background-color: #2b8ab8;
+  color: white;
+}
+
+.header {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.divided {
+  width: 160px;
+  margin: auto;
+  border: 1px solid black;
+  margin-bottom: 50px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  column-gap: 30px;
+  margin-left: 50px;
+  margin-right: 50px;
+  text-align: center;
+  gap: 40px;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+.product_img {
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 10px 20px rgb(0, 0, 0, 0.3);
+  border: 2px solid black;
+}
+
+.red {
+  color: red;
+}
+
+.about {
+  background-image: url(../images/rose.jpg);
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  margin-top: 80px;
+  color: white;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.divid {
+  width: 40px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.about div {
+  padding: 70px 0px;
+}
+
+.packaging {
+  margin-top: 90px;
+  margin-left: 90px;
+}
+
+.packaging img {
+  float: left;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.packaging div {
+  position: relative;
+  left: 50px;
+  width: 90%;
+  text-align: justify;
+  margin-top: 20px;
+}
+
+.packaging_header {
+  margin-top: 30px;
+}
+
+.clear {
+  clear: both;
+}
+
+.packaging_space {
+  margin-right: 10px;
+}
+
+.support {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 30px 0px 30px 130px;
+  background-color: #e2e7e9;
+}
+
+.support_icon {
+  float: left;
+  margin-right: 30px;
+}
+
+.support div p b {
+  font-size: 20px;
+}
+
+footer {
+  background-color: #212529;
+}
+
+.footer_nav {
+  display: inline-block;
+  text-decoration: none;
+  color: gray;
+  padding-top: 40px;
+  margin-right: 40px;
+}
+
+.designed {
+  color: gray;
+  margin-top: 20px;
+}
+
+.footer_icon {
+  display: inline-block;
+  margin-top: 20px;
+  margin-right: 20px;
+  color: gray;
+  padding: 20px;
+}
