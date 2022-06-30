@@ -19,7 +19,13 @@
         <label for="married">Married</label>
       </div>
       <br />
-      <input class="input" type="text" placeholder="Spouse" hidden />
+      <input
+        class="input"
+        type="text"
+        placeholder="Spouse"
+        name="spouse"
+        hidden
+      />
       <br />
       <button type="submit">Save</button>
     </form>
@@ -28,11 +34,11 @@
     <script>
       $(function () {
         $("#single").click(function () {
-          $('input[placeholder="Spouse"]').hide(1000);
+          $('input[name="Spouse"]').hide(1000);
         });
 
         $("#married").click(function () {
-          $('input[placeholder="Spouse"]').show(1000);
+          $('input[name="Spouse"]').show(1000);
         });
       });
     </script>
