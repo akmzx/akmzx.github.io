@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day3-Assignment</title>
+  </head>
+  <body>
+    <form>
+      <input class="input" type="text" name="name" placeholder="Name" />
+      <br />
+      <input class="input" type="text" name="age" placeholder="Age" />
+      <br />
+      <div>
+        <input type="radio" name="relationship" id="single" />
+        <label for="single">Single</label>
+        <input type="radio" name="relationship" id="married" />
+        <label for="married">Married</label>
+      </div>
+      <br />
+      <input class="input" type="text" placeholder="Spouse" hidden />
+      <br />
+      <button type="submit">Save</button>
+    </form>
+
+    <script src="jquery.min.js"></script>
+    <script>
+      $(function () {
+        $("#single").click(function () {
+          $('input[placeholder="Spouse"]').hide(1000);
+        });
+
+        $("#married").click(function () {
+          $('input[placeholder="Spouse"]').show(1000);
+        });
+      });
+    </script>
+    <style>
+      body {
+        background-color: #dcefec;
+      }
+
+      form {
+        padding-top: 200px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .input {
+        padding: 10px;
+        border-radius: 5px;
+        width: 200px;
+        align-self: center;
+        background-color: #81b9ed;
+        border: none;
+        outline: none;
+      }
+
+      div {
+        align-self: center;
+      }
+
+      button {
+        width: 200px;
+        align-self: center;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: #af6a88;
+        border: none;
+        color: white;
+      }
+    </style>
+  </body>
+</html>
