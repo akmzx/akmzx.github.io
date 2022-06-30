@@ -13,9 +13,9 @@
       <input class="input" type="number" name="age" placeholder="Age" />
       <br />
       <div>
-        <input type="radio" name="relationship" id="single" checked />
+        <input type="radio" name="relationship" id="single" value="0" checked />
         <label for="single">Single</label>
-        <input type="radio" name="relationship" id="married" />
+        <input type="radio" name="relationship" id="married" value="1" />
         <label for="married">Married</label>
       </div>
       <br />
@@ -27,7 +27,7 @@
         hidden
       />
       <br />
-      <button type="submit">Save</button>
+      <input class="save" type="submit" value="save" />
     </form>
 
     <style>
@@ -57,7 +57,7 @@
         outline: none;
       }
 
-      button {
+      .save {
         width: 200px;
         border-radius: 10px;
         padding: 10px;
