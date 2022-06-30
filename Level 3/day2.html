@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 2 - Selectors</title>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi officiis in
+      ipsum inventore at eos nulla repellendus qui quisquam, eveniet aliquid.
+      Error explicabo quia quam corrupti, recusandae itaque ad architecto?
+    </p>
+    <p class="mname">This is second p tag</p>
+    <h2 class="mname">Aung Kaung Myat</h2>
+    <h2 class="mname">Aung Myat</h2>
+
+    <button id="mybtn">Click Me</button>
+
+    <ul>
+      <li>first year</li>
+      <li>second year</li>
+      <li class="current">third year</li>
+    </ul>
+    <section id="content">
+      <ul class="people">
+        <li>Mg Mg</li>
+        <li>Su Su</li>
+        <li class="current">Ko Ko</li>
+      </ul>
+    </section>
+    <table border="1" cellspacing="0" cellpadding="10">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Job</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Aung Myat</td>
+          <td>19</td>
+          <td>Web Developer</td>
+        </tr>
+        <tr>
+          <td>Tin Ko Htoo</td>
+          <td>22</td>
+          <td>Manager</td>
+        </tr>
+        <tr>
+          <td>April</td>
+          <td>21</td>
+          <td>Nurse</td>
+        </tr>
+        <tr>
+          <td>Yi Yi</td>
+          <td>21</td>
+          <td>Teacher</td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+
+    <form action="">
+      <input
+        type="text"
+        name="firstName"
+        id="firstName"
+        placeholder="firstName"
+      />
+      <br />
+      <input type="text" name="lastName" id="lastName" placeholder="lastName" />
+      <br />
+      <input type="radio" name="gender" id="male" />
+      <label for="male">male</label>
+      <input type="radio" name="gender" id="female" />
+      <label for="female">female</label>
+      <br />
+      <input type="text" placeholder="disabled" disabled />
+      <br />
+      <select name="smoothie" id="smoothie">
+        <option value="apple">apple</option>
+        <option value="orange">orange</option>
+        <option value="grape">grape</option>
+      </select>
+    </form>
+
+    <div class="filter">
+      <p>filter 1</p>
+    </div>
+    <div class="filter">
+      <h1 class="bar">bar</h1>
+    </div>
+    <div class="filter">
+      <p>filter 2</p>
+    </div>
+    <div class="filter">
+      <h1>not bar</h1>
+    </div>
+
+    <script src="jquery.min.js"></script>
+    <script>
+      $(function () {
+        // Element Selector
+        var p = $("p");
+        console.log(p);
+
+        // Class Selector
+        var mname = $(".mname");
+        console.log(mname);
+
+        // Id Selector
+        var mybtn = $("#mybtn");
+        console.log(mybtn);
+        if (mybtn.length) {
+          console.log("d exist");
+        }
+
+        // with element & class
+        var ec = $("h2.mname");
+        console.log(ec);
+
+        // first li of first ul
+        var f = $("ul li:first");
+        console.log(f);
+
+        // parent child selector
+        var pc = $("#content ul.people li");
+        console.log(pc);
+
+        // element with attribute
+        var firstName = $("input[name='firstName']");
+        console.log(firstName);
+
+        // elements and types
+        var btn = $(":button");
+        console.log(btn);
+
+        // even tr elements
+        var tr_even = $("tr:even");
+        console.log(tr_even);
+
+        // Filtering
+        var p_tags = $("div.filter").has("p");
+        console.log(p_tags);
+
+        var h2_bar = $("h1").not(".bar");
+        console.log(h2_bar);
+
+        var li_current = $("ul li").filter(".current");
+        console.log(li_current);
+
+        var li_first = $("ul li").first();
+        console.log(li_first);
+
+        var li_eq = $("ul li").eq(2);
+        console.log(li_eq);
+
+        // Working with form
+        var checked = $("form :checked");
+        console.log(checked);
+
+        var disabled = $("form :disabled");
+        console.log(disabled);
+
+        var enabled = $("form :enabled");
+        console.log(enabled);
+
+        var input = $("form :input");
+        console.log(input);
+
+        var selected = $("form :selected");
+        console.log(selected);
+      });
+    </script>
+  </body>
+</html>
