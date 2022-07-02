@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>day4-assignment2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1 class="header">My Products</h1>
+    <div class="container">
+      <div class="product">
+        <img
+          src="https://www.time4diamonds.com/media/mgs_blog/3/_/3_1.jpeg"
+          alt=""
+          class="product_img"
+        />
+        <h1 class="product_name">Rolex Watch</h1>
+        <button type="submit">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img
+          src="https://i.pinimg.com/736x/1d/2d/fa/1d2dfa1927b0a4956f986a9a3f98da82.jpg"
+          alt=""
+          class="product_img"
+        />
+        <h1 class="product_name">Nike Shoe</h1>
+        <button type="submit">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img
+          src="https://i.pinimg.com/originals/a5/0c/9f/a50c9f28ef5dcdfd8c3fef8d5e1a78f7.jpg"
+          alt=""
+          class="product_img"
+        />
+        <h1 class="product_name">Louis Vuitton Backpack</h1>
+        <button type="submit">Add to Cart</button>
+      </div>
+    </div>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background-color: #caf0f8;
+        margin: 0 auto;
+      }
+
+      .header {
+        width: fit-content;
+        color: #0077b6;
+        margin: 0 auto;
+        padding: 30px;
+        text-decoration: underline;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: max(300px) max(300px) max(300px);
+        gap: max(20px);
+        justify-content: space-evenly;
+      }
+
+      .product {
+        text-align: center;
+        padding-bottom: 30px;
+      }
+
+      .product_name {
+        font-size: 20px;
+        color: #0077b6;
+      }
+
+      .product_img {
+        width: 170px;
+        height: 160px;
+        border-radius: 10px;
+        border: 3px solid #ade8f4;
+        /* box-shadow: 5px 0px 10px black; */
+      }
+
+      button {
+        background-color: #023e8a;
+        padding: 5px;
+        border-radius: 5px;
+        width: 100px;
+        color: #caf0f8;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        border: 2px solid #023e8a;
+      }
+
+      button:hover {
+        color: #023e8a;
+        background-color: #caf0f8;
+      }
+
+      @media (max-width: 963px) {
+        .container {
+          grid-template-columns: 100%;
+        }
+
+        .product {
+          border-bottom: 3px solid #023e8a;
+        }
+      }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script></script>
+  </body>
+</html>
