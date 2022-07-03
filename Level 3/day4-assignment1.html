@@ -126,11 +126,16 @@
           var name = $(".name").val();
           var hobbies = $.map(
             $("input[type='checkbox']:checked"),
-            function (e) {
-              return e.value;
+            function (hobby) {
+              return hobby.value;
             }
           );
-
+          /*
+          data = `My name is ${name}. I like`;
+          for (let i = 0; i < hobbies.length; i++) {
+            data += ` ${hobbies[i]}`;
+          }
+          */
           if (hobbies.length == 1) {
             data = `My name is ${name} and my hobby is ${hobbies[0]}`;
           } else if (hobbies.length == 2) {
