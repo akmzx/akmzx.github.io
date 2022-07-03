@@ -124,7 +124,6 @@
         $("form").on("submit", function (event) {
           event.preventDefault();
           var name = $(".name").val();
-          var hobby = $("input[type='checkbox']:checked").val();
           var hobbies = $.map(
             $("input[type='checkbox']:checked"),
             function (e) {
@@ -133,7 +132,7 @@
           );
 
           if (hobbies.length == 1) {
-            data = `My name is ${name} and my hobby is ${hobby}`;
+            data = `My name is ${name} and my hobby is ${hobbies[0]}`;
           } else if (hobbies.length == 2) {
             data = `My name is ${name} and my hobbies are ${hobbies[0]} and ${hobbies[1]}`;
           } else if (hobbies.length == 3) {
