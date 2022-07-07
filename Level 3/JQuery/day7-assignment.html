@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>day7-assignment</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="jquery.min.js"></script>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      .img_scroll {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: auto;
+        overflow-x: auto;
+        overscroll-behavior-inline: contain;
+      }
+
+      .meme_img {
+        padding: 1px;
+        background: rgb(12, 0, 0);
+        width: auto;
+        height: 100px;
+      }
+
+      .edit_meme {
+        float: left;
+        width: 300px;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .current_meme {
+        max-height: 100%;
+        max-width: 100%;
+      }
+
+      .meme_name {
+        margin-top: 20px;
+      }
+    </style>
+    <script>
+      $(function () {
+        $.get("https://api.imgflip.com/get_memes", function (resp) {
+          //   console.log(resp); // server response
+          if (resp.success) {
+            // console.log(resp.data.memes);
+            var memes = resp.data.memes;
+            var data = "";
+            for (const row of memes) {
+              data += `<img class="meme_img" data-id="${row.id}" data-url="${row.url}" data-name="${row.name}" data-box="${row.box_count}" src="${row.url}" alt="${row.name}">`;
+            }
+            $(".img_scroll").html(data);
+          }
+        });
+
+        $("body").on("click", ".meme_img", function () {
+          var id = $(this).data("id");
+          var url = $(this).data("url");
+          var name = $(this).data("name");
+          var box = $(this).data("box");
+          data = `<img class="current_meme" data-id="${id}" data-url="${url}" data-name="${name}" src="${url}">`;
+          // console.log(`${url}, ${name}, ${box}`);
+          $(".edit_meme").html(data);
+          var data = "";
+          for (let i = 0; i < box; i++) {
+            data += `<input class="text_input" type="text" name="text${i}" id="text${i}" placeholder="text${i}"/><br/>`;
+          }
+          $(".input_gp").html(data);
+          data = `Meme Name: ${name}`;
+          $(".meme_name").html(data);
+        });
+
+        $(".btn").on("click", function () {
+          var id = $(".current_meme").data("id");
+          var texts = $.map($(".text_input"), function (input) {
+            // return input.value;
+            return {
+              text: input.value,
+            };
+          });
+          console.log(texts);
+          $.post(
+            " https://api.imgflip.com/caption_image",
+            {
+              template_id: `${id}`,
+              username: "aungmyat3801",
+              password: "akm100803",
+              boxes: texts,
+            },
+            function (resp) {
+              console.log(resp.data.url);
+              if (resp.success) {
+                var image = `<img class="current_meme" data-url="${resp.data.url}" data-name="${resp.data.name}" src="${resp.data.url}" width="500px">`;
+                $(".edit_meme").html(image);
+              }
+            }
+          );
+        });
+
+        $(".download").on("click", function () {
+          var imgUrl = $(".current_meme").data("url");
+          Swal.fire({
+            title: "sweet!",
+            text: "Meme with a custom text",
+            imageUrl: `${imgUrl}`,
+            imageWidth: 400,
+            imageHeight: "auto",
+            imageAlt: `${name}`,
+            confirmButtonText: "Download",
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="img_scroll"></div>
+    <div class="edit_meme">
+      <img class="current_meme" src="https://i.imgflip.com/30b1gx.jpg" alt="" />
+    </div>
+    <p class="meme_name">Meme Name: Drake Hotline Bling</p>
+    <div class="input_gp"></div>
+    <button class="btn">register</button>
+    <button class="download">Download</button>
+  </body>
+</html>
