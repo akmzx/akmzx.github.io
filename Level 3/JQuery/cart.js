@@ -5,6 +5,7 @@ $(function () {
     var id = $(this).data("id");
     var name = $(this).data("name");
     var price = $(this).data("price");
+
     var item = {
       id: id,
       name: name,
@@ -16,31 +17,47 @@ $(function () {
     var cartStr = localStorage.getItem("cart");
     if (!cartStr) {
       var itemArr = new Array();
+      itemArr.push(item);
     } else {
       itemArr = JSON.parse(cartStr);
+      for (let i = 0; i < itemArr.length; i++) {
+        if (itemArr[i].name === name) {
+          itemArr[i].qty += 1;
+          var done = true;
+          break;
+        }
+      }
+      if (!done) itemArr.push(item);
     }
 
-    itemArr.push(item);
     localStorage.setItem("cart", JSON.stringify(itemArr));
   });
-  // if click addtocart btn, store into local storage
-  //   [
-  //     {
-  //       id: 1,
-  //       name: "item one",
-  //       price: 1500,
-  //       qty: 1,
-  //     },
-  //   ];
+
   function getData() {
     var cartStr = localStorage.getItem("cart");
+    var cartArr = JSON.parse(cartStr);
+
     var data = "";
     if (!cartStr) {
-      data += `Your Cart is Empty!`;
+      data = `Your Cart is Empty!`;
+      $("#cart").html(data);
     } else {
-      data += `Show your items here`;
+      var items = cartArr.map(function (item) {
+        return `<tr>
+          <td>${item.name}</td>
+          <td>${item.price}</td>
+          <td>${item.qty}</td>
+        </tr>`;
+      });
+      data += items;
+      $(".items").html(data);
+      var prices = cartArr.map(function (item) {
+        return item.price * item.qty;
+      });
+      data = prices.reduce((sum, current) => {
+        return (sum += current);
+      }, 0);
     }
-
-    $("#cart").html(data);
+    $(".total_price").html(data);
   }
 });

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tab</title>
+    <title>Day8-assignment</title>
     <style>
       ul.link-wapper {
         list-style: none;
@@ -33,6 +33,33 @@
         padding: 20px;
         margin: 0 auto;
         display: none;
+      }
+
+      .container {
+        max-width: 800px;
+      }
+
+      .products {
+        display: flex;
+        gap: 12px;
+        align-content: space-between;
+        text-align: center;
+        justify-content: center;
+      }
+
+      .item_img {
+        width: 200px;
+        height: 200px;
+      }
+      table {
+        border-spacing: 0;
+      }
+
+      th,
+      td {
+        border: 1px solid black;
+        text-align: center;
+        padding: 10px;
       }
     </style>
 
@@ -108,45 +135,59 @@
         </p>
       </div>
 
+      <!-- Shop -->
       <div class="content" id="shop">
         <div class="container">
           <h2 style="text-align: center">Popular Products</h2>
           <div class="products">
             <div class="item">
-              <img src="" alt="" />
-              <h4>Item One</h4>
-              <p>1500 ks</p>
+              <img
+                src="https://static.libertyprim.com/files/familles/pomme-large.jpg?1569271834"
+                alt=""
+                class="item_img"
+              />
+              <h4>Apple</h4>
+              <p>2000 ks</p>
               <button
                 class="atcbtn"
                 data-id="1"
-                data-name="Item One"
-                data-price="1500"
+                data-name="Apple"
+                data-price="2000"
               >
                 AddtoCart
               </button>
             </div>
             <div class="item">
-              <img src="" alt="" />
-              <h4>Item Two</h4>
-              <p>13400 ks</p>
+              <img
+                src="https://joanfruit.com/imagecache/custom/ff86993f3754009600e9b9789a140e96.jpeg?fit=0"
+                alt=""
+                class="item_img"
+              />
+              <h4>Banana</h4>
+              <p>5000 ks</p>
               <button
                 class="atcbtn"
                 data-id="2"
-                data-name="Item Two"
-                data-price="13400"
+                data-name="Banana"
+                data-price="5000"
               >
                 AddtoCart
               </button>
             </div>
             <div class="item">
-              <img src="" alt="" />
-              <h4>Item Three</h4>
-              <p>4400 ks</p>
+              <img
+                src="https://www.nutraingredients-asia.com/var/wrbm_gb_food_pharma/storage/images/9/1/2/0/4130219-29-eng-GB/Antioxidant-rich-grape-powder-protects-brain-from-damage-caused-by-high-fat-and-high-sugar-diets-Study.jpg"
+                alt=""
+                class="item_img"
+              />
+              <h4>Grape</h4>
+              <p>4000 ks</p>
               <button
                 class="atcbtn"
                 data-id="3"
-                data-name="Item Three"
-                data-price="4400"
+                data-name="Grape"
+                data-price="4000"
+                data-qty="1"
               >
                 AddtoCart
               </button>
@@ -157,11 +198,20 @@
 
       <div class="content" id="cart">
         <h2>Cart Tab</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates
-          itaque quasi incidunt adipisci vel illo cum nihil asperiores illum
-          vitae ab, sequi saepe ipsa, similique totam error ea amet ratione!
-        </p>
+        <table class="table">
+          <thead>
+            <th>Item Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+          </thead>
+          <tbody class="items"></tbody>
+          <tfoot>
+            <tr>
+              <td>Total Price</td>
+              <td class="total_price"></td>
+            </tr>
+          </tfoot>
+        </table>
       </div>
     </div>
   </body>
