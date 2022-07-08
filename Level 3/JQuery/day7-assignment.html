@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>day7-assignment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="img_scroll"></div>
@@ -19,21 +25,25 @@
         alt="Drake Hotline Bling"
       />
     </div>
-    <p class="meme_name">Meme Name: Drake Hotline Bling</p>
+    <p>Meme Name: <span class="meme_name">Drake Hotline Bling</span></p>
     <div class="input_gp">
       <input class="text_input" type="text" placeholder="text0" /><br />
       <input class="text_input" type="text" placeholder="text1" /><br />
     </div>
-    <button class="btn">register</button>
-    <a class="download_img">
-      <button class="download">Download</button>
-    </a>
+    <button class="enter_btn">Enter</button>
+    <button class="download_btn">Download</button>
 
     <style>
       * {
         padding: 0;
         margin: 0;
         box-sizing: border-box;
+        font-size: 15px;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: #efebff;
       }
 
       .img_scroll {
@@ -45,15 +55,23 @@
       }
 
       .meme_img {
-        padding: 1px;
-        background: rgb(12, 0, 0);
+        padding: 5px;
+        background: #efebff;
         width: auto;
-        height: 100px;
+        height: 130px;
+        border-top: 5px solid black;
+        border-bottom: 5px solid black;
+      }
+
+      .meme_img:hover {
+        padding: 0px;
+        border: 5px solid#d900c0;
+        border-radius: 5px;
       }
 
       .edit_meme {
         float: left;
-        width: 300px;
+        width: 400px;
         padding: 20px;
         text-align: center;
       }
@@ -62,12 +80,41 @@
         max-height: 100%;
         max-width: 100%;
         padding: 5px;
-        border: 3px solid black;
+        border: 3px solid #837bae;
         border-radius: 5px;
       }
 
       .meme_name {
         margin-top: 20px;
+        font-weight: 700;
+        font-size: 17px;
+      }
+
+      .text_input {
+        margin: 10px 0;
+        /* border-radius: 5px; */
+        border: 2px solid #d900c0;
+        outline: none;
+        height: 35px;
+        text-indent: 10px;
+        border-radius: 5px;
+      }
+
+      button {
+        padding: 5px;
+        width: 100px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        border: 3px solid #837bae;
+        background: transparent;
+      }
+
+      button:hover {
+        background: #d900c0;
+        border: 3px solid white;
+        color: white;
+        transition-duration: 1s;
       }
     </style>
 
@@ -103,11 +150,12 @@
             data += `<input class="text_input" type="text" placeholder="text${i}"/><br/>`;
           }
           $(".input_gp").html(data);
-          data = `Meme Name: ${name}`;
+          data = `${name}`;
           $(".meme_name").html(data);
+          var meme_name = $(".meme_name").html();
         });
 
-        $(".btn").on("click", function () {
+        $(".enter_btn").on("click", function () {
           var id = $(".current_meme").data("id");
           var texts = $.map($(".text_input"), function (input) {
             // return input.value;
@@ -125,16 +173,17 @@
               boxes: texts,
             },
             function (resp) {
-              console.log(resp.data.url);
+              console.log(resp.data);
               if (resp.success) {
-                var image = `<img class="current_meme" data-url="${resp.data.url}" data-name="${resp.data.name}" src="${resp.data.url}" width="500px">`;
+                var meme_name = $(".meme_name").text();
+                var image = `<img class="current_meme" data-url="${resp.data.url}" data-name="${meme_name}" src="${resp.data.url}" width="500px">`;
                 $(".edit_meme").html(image);
               }
             }
           );
         });
 
-        $(".download").on("click", function () {
+        $(".download_btn").on("click", function () {
           var imgUrl = $(".current_meme").data("url");
           var imgName = $(".current_meme").data("name");
           Swal.fire({
