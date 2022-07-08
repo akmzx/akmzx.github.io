@@ -73,12 +73,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="jquery.min.js"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"
-      integrity="sha512-Qlv6VSKh1gDKGoJbnyA5RMXYcvnpIqhO++MhIM2fStMcGT9i2T//tSwYFlcyoRRDcDZ+TYHpH8azBBCyhpSeqw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
 
     <script>
       $(function () {
@@ -149,10 +144,16 @@
             imageWidth: 400,
             imageHeight: "auto",
             imageAlt: `${name}`,
+            showCancelButton: true,
+            cancelButtonColor: "red",
             confirmButtonText: "Download",
-          }).then(function (result) {
-            var saveimg = `${imgName}.png`;
-            saveAs(imgUrl, saveimg);
+          }).then((result) => {
+            if (result.isConfirmed) {
+              var saveimg = `${imgName}.png`;
+              saveAs(imgUrl, saveimg);
+            } else if (result.isDismissed) {
+              return;
+            }
           });
         });
       });
