@@ -7,15 +7,15 @@
     <title>Day3-Assignment</title>
   </head>
   <body>
-    <form>
+    <form action="" method="post">
       <input class="input" type="text" name="name" placeholder="Name" />
       <br />
       <input class="input" type="number" name="age" placeholder="Age" />
       <br />
-      <div>
-        <input type="radio" name="relationship" id="single" value="0" checked />
+      <div class="status">
+        <input type="radio" name="status" id="single" value="0" checked />
         <label for="single">Single</label>
-        <input type="radio" name="relationship" id="married" value="1" />
+        <input type="radio" name="status" id="married" value="1" />
         <label for="married">Married</label>
       </div>
       <br />
@@ -23,7 +23,7 @@
         class="input"
         type="text"
         placeholder="Spouse"
-        name="Spouse"
+        name="spouse"
         hidden
       />
       <br />
@@ -70,11 +70,28 @@
     <script>
       $(function () {
         $("#single").click(function () {
-          $('input[name="Spouse"]').hide(1000);
+          $('input[name="spouse"]').hide(1000);
         });
 
         $("#married").click(function () {
-          $('input[name="Spouse"]').show(1000);
+          $('input[name="spouse"]').show(1000);
+        });
+
+        $("form").on("submit", function (event) {
+          event.preventDefault();
+          var name = $("input[name='name']").val();
+          var age = $("input[name='age']").val();
+          var status = $("input[name='status']:checked").val();
+
+          // console.log(`${name},${age},${status}`);
+          var data = "";
+          if (status == 1) {
+            var spouse = $('input[name="spouse"]').val();
+            data += `My name is ${name} and ${age} years old. I am married with ${spouse}`;
+          } else if (status == 0) {
+            data += `My name is ${name} and ${age} years old. I am single`;
+          }
+          alert(data);
         });
       });
     </script>

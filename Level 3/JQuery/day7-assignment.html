@@ -5,6 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>day7-assignment</title>
+  </head>
+  <body>
+    <div class="img_scroll"></div>
+    <div class="edit_meme">
+      <img class="current_meme" src="https://i.imgflip.com/30b1gx.jpg" alt="" />
+    </div>
+    <p class="meme_name">Meme Name: Drake Hotline Bling</p>
+    <div class="input_gp"></div>
+    <button class="btn">register</button>
+    <button class="download">Download</button>
 
     <style>
       * {
@@ -44,6 +54,10 @@
         margin-top: 20px;
       }
     </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="jquery.min.js"></script>
+
     <script>
       $(function () {
         $.get("https://api.imgflip.com/get_memes", function (resp) {
@@ -117,18 +131,5 @@
         });
       });
     </script>
-  </head>
-  <body>
-    <div class="img_scroll"></div>
-    <div class="edit_meme">
-      <img class="current_meme" src="https://i.imgflip.com/30b1gx.jpg" alt="" />
-    </div>
-    <p class="meme_name">Meme Name: Drake Hotline Bling</p>
-    <div class="input_gp"></div>
-    <button class="btn">register</button>
-    <button class="download">Download</button>
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="jquery.min.js"></script>
   </body>
 </html>

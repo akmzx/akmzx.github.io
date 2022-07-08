@@ -11,32 +11,6 @@
       href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
       rel="stylesheet"
     />
-  </head>
-  <body>
-    <form action="">
-      <input type="text" placeholder="Name" class="name" />
-
-      <fieldset>
-        <legend>Hobbies:</legend>
-
-        <input type="checkbox" name="read" id="read" value="reading" checked />
-        <label for="read">Reading</label>
-
-        <input
-          type="checkbox"
-          name="play_guitar"
-          id="play_guitar"
-          value="playing guitar"
-        />
-        <label for="play_guitar">Playing Guitar</label>
-
-        <input type="checkbox" name="game" id="game" value="game" />
-        <label for="game">Game</label>
-      </fieldset>
-
-      <input type="submit" value="save" class="save" />
-    </form>
-
     <style>
       * {
         padding: 0;
@@ -130,12 +104,12 @@
               return hobby.value;
             }
           );
-          /*
-          data = `My name is ${name}. I like`;
-          for (let i = 0; i < hobbies.length; i++) {
-            data += ` ${hobbies[i]}`;
-          }
-          */
+
+          // data = `My name is ${name}. I like`;
+          // for (let i = 0; i < hobbies.length; i++) {
+          //   data += ` ${hobbies[i]}`;
+          // }
+
           if (hobbies.length == 1) {
             data = `My name is ${name} and my hobby is ${hobbies[0]}`;
           } else if (hobbies.length == 2) {
@@ -147,5 +121,30 @@
         });
       });
     </script>
+  </head>
+  <body>
+    <form action="">
+      <input type="text" placeholder="Name" class="name" />
+
+      <fieldset>
+        <legend>Hobbies:</legend>
+
+        <input type="checkbox" name="read" id="read" value="reading" checked />
+        <label for="read">Reading</label>
+
+        <input
+          type="checkbox"
+          name="play_guitar"
+          id="play_guitar"
+          value="playing guitar"
+        />
+        <label for="play_guitar">Playing Guitar</label>
+
+        <input type="checkbox" name="game" id="game" value="game" />
+        <label for="game">Game</label>
+      </fieldset>
+
+      <input type="submit" value="save" class="save" />
+    </form>
   </body>
 </html>
