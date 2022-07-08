@@ -9,12 +9,25 @@
   <body>
     <div class="img_scroll"></div>
     <div class="edit_meme">
-      <img class="current_meme" src="https://i.imgflip.com/30b1gx.jpg" alt="" />
+      <img
+        class="current_meme"
+        data-id="181913649"
+        data-url="https://i.imgflip.com/30b1gx.jpg"
+        data-name="Drake Hotline Bling"
+        data-box="2"
+        src="https://i.imgflip.com/30b1gx.jpg"
+        alt="Drake Hotline Bling"
+      />
     </div>
     <p class="meme_name">Meme Name: Drake Hotline Bling</p>
-    <div class="input_gp"></div>
+    <div class="input_gp">
+      <input class="text_input" type="text" placeholder="text0" /><br />
+      <input class="text_input" type="text" placeholder="text1" /><br />
+    </div>
     <button class="btn">register</button>
-    <button class="download">Download</button>
+    <a class="download_img">
+      <button class="download">Download</button>
+    </a>
 
     <style>
       * {
@@ -48,6 +61,9 @@
       .current_meme {
         max-height: 100%;
         max-width: 100%;
+        padding: 5px;
+        border: 3px solid black;
+        border-radius: 5px;
       }
 
       .meme_name {
@@ -57,6 +73,12 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"
+      integrity="sha512-Qlv6VSKh1gDKGoJbnyA5RMXYcvnpIqhO++MhIM2fStMcGT9i2T//tSwYFlcyoRRDcDZ+TYHpH8azBBCyhpSeqw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
     <script>
       $(function () {
@@ -83,7 +105,7 @@
           $(".edit_meme").html(data);
           var data = "";
           for (let i = 0; i < box; i++) {
-            data += `<input class="text_input" type="text" name="text${i}" id="text${i}" placeholder="text${i}"/><br/>`;
+            data += `<input class="text_input" type="text" placeholder="text${i}"/><br/>`;
           }
           $(".input_gp").html(data);
           data = `Meme Name: ${name}`;
@@ -119,14 +141,18 @@
 
         $(".download").on("click", function () {
           var imgUrl = $(".current_meme").data("url");
+          var imgName = $(".current_meme").data("name");
           Swal.fire({
-            title: "sweet!",
-            text: "Meme with a custom text",
+            title: `${imgName}`,
+            text: "Do you want to download?",
             imageUrl: `${imgUrl}`,
             imageWidth: 400,
             imageHeight: "auto",
             imageAlt: `${name}`,
             confirmButtonText: "Download",
+          }).then(function (result) {
+            var saveimg = `${imgName}.png`;
+            saveAs(imgUrl, saveimg);
           });
         });
       });
