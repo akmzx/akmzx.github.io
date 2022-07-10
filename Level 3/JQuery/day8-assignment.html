@@ -5,7 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day8-assignment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
     <style>
+      * {
+        font-family: "Open Sans", sans-serif;
+      }
+
       ul.link-wapper {
         list-style: none;
         text-align: center;
@@ -50,8 +60,13 @@
       .item_img {
         width: 200px;
         height: 200px;
+        border: 1px solid pink;
+        border-radius: 5px;
       }
+
       table {
+        width: 100%;
+        margin: 0 auto;
         border-spacing: 0;
       }
 
@@ -59,7 +74,34 @@
       td {
         border: 1px solid black;
         text-align: center;
-        padding: 10px;
+        padding: 15px;
+        border-radius: 2px;
+      }
+
+      p.empty {
+        max-width: 300px;
+        margin: 0 auto;
+        font-size: 30px;
+      }
+
+      .cart_title {
+        max-width: 100px;
+        margin: 0 auto;
+        text-decoration: underline;
+        padding-bottom: 20px;
+      }
+
+      .atcbtn {
+        border-radius: 5px;
+        outline: none;
+        border: 1px solid pink;
+        padding: 5px 10px;
+        background-color: white;
+      }
+
+      .atcbtn:hover {
+        border: 1px solid white;
+        background-color: pink;
       }
     </style>
 
@@ -197,17 +239,18 @@
       </div>
 
       <div class="content" id="cart">
-        <h2>Cart Tab</h2>
+        <h2 class="cart_title">Cart Tab</h2>
         <table class="table">
           <thead>
             <th>Item Name</th>
             <th>Price</th>
             <th>Quantity</th>
+            <th>Total</th>
           </thead>
           <tbody class="items"></tbody>
           <tfoot>
             <tr>
-              <td>Total Price</td>
+              <td colspan="3">Total Price</td>
               <td class="total_price"></td>
             </tr>
           </tfoot>

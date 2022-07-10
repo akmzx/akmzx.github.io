@@ -39,7 +39,7 @@ $(function () {
 
     var data = "";
     if (!cartStr) {
-      data = `Your Cart is Empty!`;
+      data = `<p class="empty">Your Cart is Empty!</p>`;
       $("#cart").html(data);
     } else {
       var items = cartArr.map(function (item) {
@@ -47,6 +47,7 @@ $(function () {
           <td>${item.name}</td>
           <td>${item.price}</td>
           <td>${item.qty}</td>
+          <td>${item.price * item.qty}</td>
         </tr>`;
       });
       data += items;
