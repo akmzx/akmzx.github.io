@@ -12,7 +12,7 @@ $(function () {
       price: price,
       qty: 1,
     };
-    console.log(item);
+    // console.log(item);
 
     let cartStr = localStorage.getItem("cart");
     if (!cartStr) {
@@ -31,6 +31,7 @@ $(function () {
     }
 
     localStorage.setItem("cart", JSON.stringify(itemArr));
+    getData();
   });
 
   function getData() {
