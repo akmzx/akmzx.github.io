@@ -58,7 +58,7 @@
       }
 
       .item_img {
-        width: 200px;
+        max-width: 200px;
         height: 200px;
         border: 1px solid pink;
         border-radius: 5px;
@@ -91,7 +91,7 @@
         padding-bottom: 20px;
       }
 
-      .atcbtn {
+      button.addtoCart_btn {
         border-radius: 5px;
         outline: none;
         border: 1px solid pink;
@@ -99,9 +99,16 @@
         background-color: white;
       }
 
-      .atcbtn:hover {
+      button.addtoCart_btn:hover {
         border: 1px solid white;
         background-color: pink;
+      }
+
+      @media (max-width: 768px) {
+        .products {
+          display: flex;
+          flex-direction: column;
+        }
       }
     </style>
 
@@ -191,7 +198,7 @@
               <h4>Apple</h4>
               <p>2000 ks</p>
               <button
-                class="atcbtn"
+                class="addtoCart_btn"
                 data-id="1"
                 data-name="Apple"
                 data-price="2000"
@@ -208,7 +215,7 @@
               <h4>Banana</h4>
               <p>5000 ks</p>
               <button
-                class="atcbtn"
+                class="addtoCart_btn"
                 data-id="2"
                 data-name="Banana"
                 data-price="5000"
@@ -225,7 +232,7 @@
               <h4>Grape</h4>
               <p>4000 ks</p>
               <button
-                class="atcbtn"
+                class="addtoCart_btn"
                 data-id="3"
                 data-name="Grape"
                 data-price="4000"
@@ -247,11 +254,11 @@
             <th>Quantity</th>
             <th>Total</th>
           </thead>
-          <tbody class="items"></tbody>
+          <tbody class="product_data"></tbody>
           <tfoot>
             <tr>
-              <td colspan="3">Total Price</td>
-              <td class="total_price"></td>
+              <td colspan="3">Total cost</td>
+              <td class="total_cost"></td>
             </tr>
           </tfoot>
         </table>
