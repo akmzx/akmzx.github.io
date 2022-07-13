@@ -78,7 +78,13 @@
         border-radius: 2px;
       }
 
-      p.empty {
+      .button_td {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      .empty {
         max-width: 300px;
         margin: 0 auto;
         font-size: 30px;
@@ -247,20 +253,16 @@
 
       <div class="content" id="cart">
         <h2 class="cart_title">Cart Tab</h2>
+        <div class="cart_empty"></div>
         <table class="table">
           <thead>
+            <th>No</th>
             <th>Item Name</th>
             <th>Price</th>
             <th>Quantity</th>
             <th>Total</th>
           </thead>
           <tbody class="product_data"></tbody>
-          <tfoot>
-            <tr>
-              <td colspan="3">Total cost</td>
-              <td class="total_cost"></td>
-            </tr>
-          </tfoot>
         </table>
       </div>
     </div>
