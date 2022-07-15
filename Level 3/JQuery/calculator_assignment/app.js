@@ -102,5 +102,6 @@ $(function () {
 
     $(".first_num").text("");
     $(".second_num").text("");
+    $(".sign").text("");
   });
 });

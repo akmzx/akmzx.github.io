@@ -40,16 +40,11 @@
 button {
   padding: 15px;
   border: 1px solid rgb(142, 144, 122);
+  cursor: pointer;
 }
 
-.number {
-  background-color: white;
-}
-
-.dot {
-  background-color: white;
-}
-
+.number,
+.dot,
 .ac_btn {
   background-color: white;
 }
@@ -57,4 +52,32 @@ button {
 .equal_sign {
   grid-row: span 4;
   background-color: rgb(233, 151, 0);
+}
+
+.calc_sign:hover {
+  background: #a9b5bd;
+}
+
+.calc_sign:active {
+  background: #5f7f7f;
+}
+
+.number:hover,
+.dot:hover,
+.ac_btn:hover {
+  background: #c8fcea;
+}
+
+.number:active,
+.ac_btn:active,
+.dot:active {
+  background: #00c6cf;
+}
+
+.equal_sign:hover {
+  background: #00c8ac;
+}
+
+.equal_sign:active {
+  background: #009078;
 }
