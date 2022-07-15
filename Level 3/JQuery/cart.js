@@ -39,10 +39,12 @@ $(function () {
   function getData() {
     let cartStr = localStorage.getItem("cart");
     var total = 0;
+    var item_count = 0;
     var data = "";
 
     if (!cartStr) {
       data = `<h2 class="empty">Your Cart is Empty!</h2>`;
+      $(".item_count").text(item_count);
       $(".table").hide();
       $(".cart_empty").show();
       $(".cart_empty").html(data);
@@ -53,6 +55,7 @@ $(function () {
       $.each(cartArr, function (i, item) {
         let id = i + 1;
         total += item.qty * item.price;
+        item_count += item.qty;
         body += `<tr>
         <td class="button_td">
           <p>${id}</p>
@@ -72,6 +75,7 @@ $(function () {
       <td colspan="4">Total</td>
       <td>${numberFormat(total)}</td>
     </tr>`;
+      $(".item_count").text(item_count);
       $(".cart_empty").hide();
       $(".product_data").html(body);
       $(".table").show();
