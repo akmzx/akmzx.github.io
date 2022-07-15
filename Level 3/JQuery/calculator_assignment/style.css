@@ -1,0 +1,60 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+.container {
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+  border: 3px solid rgb(0, 0, 0);
+}
+
+.result {
+  height: 100px;
+  background-color: #333;
+  padding: 20px;
+}
+
+.first_num,
+.second_num,
+.sign {
+  color: white;
+  text-align: right;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+button {
+  padding: 15px;
+  border: 1px solid rgb(142, 144, 122);
+}
+
+.number {
+  background-color: white;
+}
+
+.dot {
+  background-color: white;
+}
+
+.ac_btn {
+  background-color: white;
+}
+
+.equal_sign {
+  grid-row: span 4;
+  background-color: rgb(233, 151, 0);
+}
