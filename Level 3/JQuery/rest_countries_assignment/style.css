@@ -9,7 +9,7 @@
   --other: #202c37;
 }
 
-.light_mode {
+.dark_mode {
   --body-bg: #202c37;
   --other-bg: #2b3743;
   --box-shadow: #1d2730;
@@ -66,7 +66,7 @@ select.filterbox {
   border-radius: 5px;
 }
 
-h5.theme {
+h5.mode {
   cursor: pointer;
 }
 

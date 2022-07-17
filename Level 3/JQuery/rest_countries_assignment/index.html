@@ -14,7 +14,7 @@
   <body>
     <div class="header">
       <h4>Where in the world?</h4>
-      <h5 class="theme"><i class="fa-solid fa-moon"></i> Dark Mode</h5>
+      <h5 class="mode"><i class="fa-solid fa-sun"></i> Light Mode</h5>
     </div>
     <div class="sort_div">
       <div class="search_box">
@@ -44,13 +44,13 @@
     <script src="jquery.min.js"></script>
     <script src="app.js"></script>
     <script>
-      $("h5.theme").on("click", function () {
-        if ($("body").hasClass("light_mode")) {
-          $("body").removeClass("light_mode");
-          $("h5.theme").html(`<i class="fa-solid fa-moon"></i> Dark Mode`);
+      $("h5.mode").on("click", function () {
+        if ($("body").hasClass("dark_mode")) {
+          $("body").removeClass("dark_mode");
+          $("h5.mode").html(`<i class="fa-solid fa-sun"></i> Light Mode`);
         } else {
-          $("body").addClass("light_mode");
-          $("h5.theme").html(`<i class="fa-solid fa-sun"></i> Light Mode`);
+          $("body").addClass("dark_mode");
+          $("h5.mode").html(`<i class="fa-solid fa-moon"></i> Dark Mode`);
         }
       });
     </script>
