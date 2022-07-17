@@ -16,17 +16,7 @@ $(function () {
     let currency = $(this).data("currency");
     let language = $(this).data("language");
     let img = $(this).data("img");
-    console.log(
-      name,
-      native_name,
-      population,
-      region,
-      subregion,
-      capital,
-      domain,
-      currency,
-      language
-    );
+
     $("div.country_cards").hide();
     $("div.sort_div").hide();
     let country_card = "";
