@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #221d29;
+  color: #e5e1ec;
+}
+
+div.header > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+div.header {
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+span.yrs {
+  padding-left: 5px;
+  font-size: 35px;
+  font-weight: 200;
+}
+
+div.btn button {
+  background-color: #59535f;
+  color: #e5e1ec;
+  border-radius: 3px;
+  padding: 2px 5px;
+  border: none;
+  margin-right: 3px;
+}
+
+div.day_name,
+div.day_no {
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+  text-align: right;
+  vertical-align: top;
+}
+
+div.day_name p {
+  padding-right: 10px;
+}
+
+div.sun p,
+div.mon p,
+div.tue p,
+div.wed p,
+div.thu p,
+div.fri p,
+div.sat p {
+  padding-right: 5px;
+  text-align: right;
+  vertical-align: top;
+  height: 81.5%;
+  border: 1px solid gray;
+}
+
+div.sat p,
+div.sun p {
+  background: #59535f;
+}
+
+span.today {
+  padding: 1px 3px;
+  background-color: rgb(192, 36, 91);
+  border-radius: 50%;
+}
