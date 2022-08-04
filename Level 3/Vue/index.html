@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!-- Raw HTML -->
+      <span v-html="message"></span>
+
+      <!-- Text Interpolation -->
+      <p>My name is {{ name }}. I'm {{ age * 2 }} years old.</p>
+
+      <!-- Attribute Bind -->
+      <img :src="photo" alt="" />
+
+      <!-- If else Condition -->
+      <p v-if="seen">Now you see me</p>
+
+      <!-- List Rendering -->
+      <div v-if="colors.length > 0">
+        <ul>
+          <li v-for="item in colors">{{ item }}</li>
+        </ul>
+      </div>
+      <div v-else>
+        <p>No Any Other Color Array Here</p>
+      </div>
+
+      <ol>
+        <li v-for="(item, index) in students">
+          <strong>{{ index }}.</strong>{{ item.name }} - {{ item.age }} - {{
+          item.gender }}
+        </li>
+      </ol>
+
+      <!-- Event -->
+      <p>Count is: {{ count }}</p>
+      <button @click="count++">Add 1</button>
+
+      <button @click="openalert('haha')">openbox</button>
+
+      <!-- Input Binding -->
+      <input type="text" name="username" v-model="username" />
+      <p>{{ username }}</p>
+
+      <input v-model.number="age" />
+    </div>
+  </body>
+  <script>
+    const mountedApp = app.mount("#app");
+  </script>
+</html>
