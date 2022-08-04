@@ -12,12 +12,14 @@
   text-align: center;
   padding: 20px 0;
   font-size: 30px;
+  text-decoration: underline;
 }
 
 .sub_header {
   text-align: center;
   padding: 10px;
   font-size: 25px;
+  margin-bottom: 10px;
 }
 
 label {
