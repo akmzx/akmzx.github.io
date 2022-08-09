@@ -12,29 +12,27 @@
   <body>
     <div id="app">
       <h1 class="title">{{ title }}</h1>
-      <form action="">
-        <h3 class="sub_header">Your Height:</h3>
-        <div class="height">
-          <div>
-            <label for="feet">Feet:</label>
-            <input type="number" id="feet" v-model="feet" />
-          </div>
-          <div>
-            <label for="inch">Inch:</label>
-            <input type="number" id="inch" v-model.number="inch" />
-          </div>
+
+      <h3 class="sub_header">Your Height:</h3>
+      <div class="height">
+        <div>
+          <label for="feet">Feet:</label>
+          <input type="number" id="feet" v-model="feet" />
         </div>
-        <h3 class="sub_header">Your Weight:</h3>
-        <div class="grid">
-          <div class="weight">
-            <label for="pound">Pound:</label>
-            <input type="number" id="pound" v-model.number="pound" />
-          </div>
+        <div>
+          <label for="inch">Inch:</label>
+          <input type="number" id="inch" v-model.number="inch" />
         </div>
-        <button type="button" @click="result = calculate(feet, inch, pound)">
-          Calculate
-        </button>
-      </form>
+      </div>
+      <h3 class="sub_header">Your Weight:</h3>
+      <div class="grid">
+        <div class="weight">
+          <label for="pound">Pound:</label>
+          <input type="number" id="pound" v-model.number="pound" />
+        </div>
+      </div>
+      <button @click="result = calculate(feet, inch, pound)">Calculate</button>
+
       <div class="category">
         <h2 class="sub_header">BMI Categories:</h2>
         <div v-html="paragraph"></div>

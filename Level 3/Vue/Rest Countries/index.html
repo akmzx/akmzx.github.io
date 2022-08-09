@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rest Countries</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script
+      src="https://kit.fontawesome.com/927697cdc8.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="header">
+        <h4>Where in the world?</h4>
+        <h5 class="mode" @click="changeTheme">
+          <i :class="[lightMode ? 'fa-solid fa-sun' : 'fa-solid fa-moon']"></i>
+          {{ lightMode ? "Light Mode" : "Dark Mode"}}
+        </h5>
+      </div>
+      <div v-if="clicked === false">
+        <div class="sort_div">
+          <div class="search_box">
+            <label for="searchBar">
+              <i class="fa-solid fa-magnifying-glass" for="searchBar"></i>
+            </label>
+            <input
+              v-model="search"
+              type="text"
+              name="searchBar"
+              id="searchBar"
+              placeholder="Search for a country..."
+            />
+          </div>
+          <div class="filter">
+            <select name="filterbox" class="filterbox" v-model="selected">
+              <option :value="option" v-for="(option) in options">
+                {{ option }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="country_cards">
+          <div class="country_card" v-for="(country, index) in countries">
+            <img
+              :src="country.flags.png"
+              :alt="country.name.common"
+              class="flag"
+            />
+            <div class="country_info" @click="showData(index)">
+              <h4 class="name">{{ country.name.official }}</h4>
+              <p class="population">
+                Population: {{ numberFormat(country.population) }}
+              </p>
+              <p class="region">Region: {{ country.region }}</p>
+              <p class="capital">Capital: {{ String(country.capital) }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div v-if="clicked == true">
+        <div class="back_div">
+          <button class="backbtn" @click="btnClick()">
+            <i class="fa-solid fa-arrow-left-long"></i
+            ><span class="colored">Back</span>
+          </button>
+        </div>
+        <div class="country_click">
+          <img
+            :src="countries[number].flags.png"
+            alt="countries[number].name.common"
+            class="img_click"
+          />
+          <div class="information_click">
+            <h2 class="name_click">{{ countries[number].name.official }}</h2>
+            <div class="left_side">
+              <p class="native_click">
+                Native Name:
+                <span class="colored">{{ countries[number].name.common }}</span>
+              </p>
+              <p class="population_click">
+                Population:
+                <span class="colored"
+                  >{{ numberFormat(countries[number].population) }}</span
+                >
+              </p>
+              <p class="region_click">
+                Region:
+                <span class="colored">{{ countries[number].region }}</span>
+              </p>
+              <p class="subregion_click">
+                Sub Region:
+                <span class="colored">{{ countries[number].subregion }}</span>
+              </p>
+              <p class="capital_click">
+                Capital:
+                <span class="colored"
+                  >{{ String(countries[number].capital) }}</span
+                >
+              </p>
+            </div>
+            <div class="right_side">
+              <p class="domain_click">
+                Top Level Domain:
+                <span class="colored">{{ String(countries[number].tld) }}</span>
+              </p>
+              <p class="currency_click">
+                Currencies:
+                <span class="colored">{{ currencyName.join(",") }}</span>
+              </p>
+              <p class="languages_click">
+                Languages:
+                <span class="colored">{{ languageName.join(", ") }}</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const mountedApp = app.mount("#app");
+    </script>
+  </body>
+</html>
+
+<!-- Question -->
+
+<!-- Can't put class to body with Vue -->
+<!-- can't access array number  -->
+<!-- :data-currency="currencyName"
+          :data-language="languageName" -->

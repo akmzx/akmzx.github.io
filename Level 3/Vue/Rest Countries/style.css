@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --body-bg: #fffffe;
+  --other-bg: #e5e9ed;
+  --box-shadow: #a2afb7;
+  --span: #1d2730;
+  --arrow-click: #2b3743;
+  --other: #202c37;
+}
+
+.dark_mode {
+  --body-bg: #202c37;
+  --other-bg: #2b3743;
+  --box-shadow: #1d2730;
+  --span: #a2afb7;
+  --arrow-click: #e5e9ed;
+  --other: #fffffe;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: var(--other);
+}
+
+body {
+  background: var(--body-bg);
+}
+
+h1.wait {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--span);
+}
+
+div.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 62px;
+  background: var(--other-bg);
+  box-shadow: 0px 3px 5px var(--box-shadow);
+  margin-bottom: 50px;
+}
+
+div.header h4 {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+div.header h5 {
+  font-weight: 400;
+}
+
+div.sort_div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 70px;
+}
+
+div.search_box input,
+select.filterbox {
+  padding: 15px 25px;
+  font-weight: 300;
+  font-size: 13px;
+  background: var(--other-bg);
+  box-shadow: 0px 3px 5px var(--box-shadow);
+  border-radius: 5px;
+}
+
+h5.mode {
+  cursor: pointer;
+}
+
+div.search_box input {
+  width: 325px;
+  border: none;
+}
+
+select.filterbox {
+  outline: none;
+  border: none;
+}
+
+.fa-magnifying-glass {
+  padding: 17px 10px;
+  background: var(--other-bg);
+  box-shadow: 0px 3px 5px var(--box-shadow);
+  border-radius: 5px;
+}
+
+.fa-chevron-down {
+  padding-left: 20px;
+}
+
+div.country_cards {
+  padding: 40px 62px;
+  display: grid;
+  grid-template-columns: 300px 300px 300px 300px;
+  column-gap: 65px;
+  row-gap: 60px;
+}
+
+div.country_card {
+  width: 300px;
+  background: var(--other-bg);
+  box-shadow: 0px 3px 5px var(--box-shadow);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+img.flag {
+  width: 100%;
+  height: 200px;
+}
+
+div.country_info {
+  padding: 0px 0px 50px 30px;
+}
+
+h4.name {
+  padding: 20px 0px 30px 0px;
+}
+
+p.population,
+p.region,
+p.capital {
+  font-weight: 300;
+  font-size: 15px;
+}
+
+button.backbtn {
+  padding: 5px 20px;
+  font-weight: 500;
+  background: var(--other-bg);
+  box-shadow: 3px 3px 2px var(--box-shadow);
+  border-radius: 5px;
+  border: none;
+  font-size: 15px;
+  margin: 0px 70px;
+}
+
+.fa-arrow-left-long {
+  padding-right: 15px;
+  color: var(--arrow-click);
+}
+
+img.img_click {
+  width: 700px;
+  height: 350px;
+  margin: 0 70px;
+  box-shadow: 3px 3px 2px var(--box-shadow);
+  border: 1px solid #202c37;
+}
+
+div.back_div {
+  margin-bottom: 50px;
+}
+
+div.country_click {
+  display: flex;
+  align-items: center;
+}
+
+div.information_click {
+  width: 100%;
+  padding: 0 50px;
+  line-height: 40px;
+  display: block;
+}
+
+h2.name_click {
+  padding: 30px 0;
+  font-size: 30px;
+}
+
+div.left_side {
+  float: left;
+  padding: 0 50px 0 0;
+}
+
+span.colored {
+  color: var(--span);
+}
+
+.native_click,
+.population_click,
+.region_click,
+.subregion_click,
+.capital_click,
+.domain_click,
+.currency_click,
+.languages_click {
+  color: var(--arrow-click);
+}
