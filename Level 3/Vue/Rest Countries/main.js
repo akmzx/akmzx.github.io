@@ -101,7 +101,6 @@ const app = Vue.createApp({
       let languageObject = this.data[num].languages;
       if (languageObject != undefined) {
         let languageValues = Object.values(languageObject);
-        var languageName = [];
         for (let i = 0; i < languageValues.length; i++) {
           this.languageName.push(languageValues[i]);
         }
