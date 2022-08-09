@@ -42,10 +42,11 @@ div.header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 62px;
+  padding: 20px 20px;
   background: var(--other-bg);
   box-shadow: 0px 3px 5px var(--box-shadow);
   margin-bottom: 50px;
+  width: 100vw;
 }
 
 div.header h4 {
@@ -61,12 +62,12 @@ div.sort_div {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 70px;
+  margin: 0 20px;
 }
 
 div.search_box input,
 select.filterbox {
-  padding: 15px 25px;
+  padding: 15px 10px;
   font-weight: 300;
   font-size: 13px;
   background: var(--other-bg);
@@ -79,7 +80,7 @@ h5.mode {
 }
 
 div.search_box input {
-  width: 325px;
+  max-width: 325px;
   border: none;
 }
 
@@ -100,11 +101,10 @@ select.filterbox {
 }
 
 div.country_cards {
-  padding: 40px 62px;
+  padding: 40px 20px;
   display: grid;
   grid-template-columns: 300px 300px 300px 300px;
-  column-gap: 65px;
-  row-gap: 60px;
+  gap: 50px;
 }
 
 div.country_card {
@@ -198,4 +198,27 @@ span.colored {
 .currency_click,
 .languages_click {
   color: var(--arrow-click);
+}
+
+@media (max-width: 1024px) {
+  div.country_cards {
+    grid-template-columns: auto auto auto;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  div.country_cards {
+    grid-template-columns: auto auto;
+  }
+
+  div.country_card {
+    width: 300px;
+  }
+}
+
+@media (max-width: 450px) {
+  div.country_cards {
+    grid-template-columns: auto;
+  }
 }
