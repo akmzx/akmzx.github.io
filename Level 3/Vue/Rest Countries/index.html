@@ -17,11 +17,11 @@
   <body>
     <div id="app">
       <div class="header">
-        <h4>Where in the world?</h4>
-        <h5 class="mode" @click="changeTheme">
+        <h1>Where in the world?</h1>
+        <div class="mode" @click="changeTheme">
           <i :class="[lightMode ? 'fa-solid fa-sun' : 'fa-solid fa-moon']"></i>
-          {{ lightMode ? "Light Mode" : "Dark Mode"}}
-        </h5>
+          <span>{{ lightMode ? "Light Mode" : "Dark Mode"}}</span>
+        </div>
       </div>
       <div v-if="clicked === false">
         <div class="sort_div">
@@ -37,8 +37,8 @@
               placeholder="Search for a country..."
             />
           </div>
-          <div class="filter">
-            <select name="filterbox" class="filterbox" v-model="selected">
+          <div class="filter_div">
+            <select name="filterbox" class="filter_box" v-model="selected">
               <option :value="option" v-for="(option) in options">
                 {{ option }}
               </option>
@@ -46,13 +46,17 @@
           </div>
         </div>
         <div class="country_cards">
-          <div class="country_card" v-for="(country, index) in countries">
+          <div
+            class="country_card"
+            v-for="(country, index) in countries"
+            @click="showData(index)"
+          >
             <img
               :src="country.flags.png"
               :alt="country.name.common"
               class="flag"
             />
-            <div class="country_info" @click="showData(index)">
+            <div class="country_info">
               <h4 class="name">{{ country.name.official }}</h4>
               <p class="population">
                 Population: {{ numberFormat(country.population) }}
@@ -71,11 +75,13 @@
           </button>
         </div>
         <div class="country_click">
-          <img
-            :src="countries[number].flags.png"
-            alt="countries[number].name.common"
-            class="img_click"
-          />
+          <div class="country-click-img">
+            <img
+              :src="countries[number].flags.png"
+              alt="countries[number].name.common"
+              class="img_click"
+            />
+          </div>
           <div class="information_click">
             <h2 class="name_click">{{ countries[number].name.official }}</h2>
             <div class="left_side">
