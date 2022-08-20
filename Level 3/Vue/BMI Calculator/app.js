@@ -14,15 +14,23 @@ const app = Vue.createApp({
     calculate(feet, inch, pound) {
       let num = (pound / (feet * 12 + inch) ** 2) * 703;
       if (num < 18.5) {
-        return "<h1 class='result'  style='color: blue'>You are underWeight</h1>";
+        return `<h1 class='result'  style='color: blue'>You are underWeight</h1> <p style='text-align: center'>Your BMI is ${num.toFixed(
+          1
+        )}</p>`;
       } else if (num >= 18.5 && num < 25) {
-        return "<h1 class='result'  style='color: green'>You are Normalweight</h1>";
+        return `<h1 class='result'  style='color: green'>You are Normalweight</h1> <p style='text-align: center'>Your BMI is ${num.toFixed(
+          1
+        )}</p>`;
       } else if (num >= 25 && num < 30) {
-        return "<h1 class='result'  style='color: orange'>You are Overweight</h1>";
+        return `<h1 class='result'  style='color: orange'>You are Overweight</h1> <p style='text-align: center'>Your BMI is ${num.toFixed(
+          1
+        )}</p>`;
       } else if (num >= 30) {
-        return "<h1 class='result'  style='color: red'>You are Obese</h1>";
+        return `<h1 class='result'  style='color: red'>You are Obese</h1> <p style='text-align: center'>Your BMI is ${num.toFixed(
+          1
+        )}</p>`;
       } else {
-        return "<h1 class='result' >Please Enter your height and weight</h1>";
+        return `<h1 class='result' >Please Enter your height and weight</h1>`;
       }
     },
   },

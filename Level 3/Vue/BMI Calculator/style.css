@@ -19,7 +19,6 @@
   text-align: center;
   padding: 10px;
   font-size: 25px;
-  margin-bottom: 10px;
 }
 
 label {
@@ -57,7 +56,7 @@ button:hover {
 }
 
 .category {
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   text-align: center;
 }
 
