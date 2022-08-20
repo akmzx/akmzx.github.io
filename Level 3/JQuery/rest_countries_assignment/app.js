@@ -1,7 +1,9 @@
 $(function () {
+  $("div.success").hide();
   var country = [];
   $.get("https://restcountries.com/v3.1/all", function (resp) {
-    $("h1.wait").hide();
+    $("div.load").hide();
+    $("div.success").show();
     country = resp;
     showData(resp);
   });
