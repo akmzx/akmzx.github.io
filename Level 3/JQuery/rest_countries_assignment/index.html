@@ -13,8 +13,8 @@
   </head>
   <body>
     <div class="header">
-      <h4>Where in the world?</h4>
-      <h5 class="mode"><i class="fa-solid fa-sun"></i> Light Mode</h5>
+      <h1>Where in the world?</h1>
+      <div class="mode"><i class="fa-solid fa-sun"></i> Light Mode</div>
     </div>
     <div class="sort_div">
       <div class="search_box">
@@ -28,8 +28,8 @@
           placeholder="Search for a country..."
         />
       </div>
-      <div class="filter">
-        <select name="filterbox" class="filterbox">
+      <div class="filter_div">
+        <select name="filterbox" class="filter_box">
           <option value="all" selected>All</option>
           <option value="Africa">Africa</option>
           <option value="Americas">Americas</option>
@@ -45,13 +45,13 @@
     <script src="jquery.min.js"></script>
     <script src="app.js"></script>
     <script>
-      $("h5.mode").on("click", function () {
+      $("div.mode").on("click", function () {
         if ($("body").hasClass("dark_mode")) {
           $("body").removeClass("dark_mode");
-          $("h5.mode").html(`<i class="fa-solid fa-sun"></i> Light Mode`);
+          $("div.mode").html(`<i class="fa-solid fa-sun"></i> Light Mode`);
         } else {
           $("body").addClass("dark_mode");
-          $("h5.mode").html(`<i class="fa-solid fa-moon"></i> Dark Mode`);
+          $("div.mode").html(`<i class="fa-solid fa-moon"></i> Dark Mode`);
         }
       });
     </script>

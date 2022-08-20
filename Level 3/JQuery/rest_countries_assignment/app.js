@@ -28,11 +28,13 @@ $(function () {
     </button>
   </div>
   <div class="country_click">
-    <img
-      src="${img}"
-      alt="${name}"
-      class="img_click"
-    />
+    <div class="country-click-img">
+      <img
+        src="${img}"
+        alt="${name}"
+        class="img_click"
+      />
+    </div>
     <div class="information_click">
       <h2 class="name_click">${name}</h2>
       <div class="left_side">
@@ -86,7 +88,7 @@ $(function () {
     showData(filteredCountry);
   });
 
-  $("select.filterbox").on("change", function () {
+  $("select.filter_box").on("change", function () {
     let result = $(this).val();
     let filteredCountry = [];
     console.log(result);
