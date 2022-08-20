@@ -19,7 +19,7 @@ div.header > div {
 }
 
 div.header {
-  padding: 0 10px;
+  padding: 40px 10px;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -28,7 +28,7 @@ div.header {
 
 span.yrs {
   padding-left: 5px;
-  font-size: 35px;
+  font-size: 25px;
   font-weight: 200;
 }
 

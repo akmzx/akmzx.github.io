@@ -14,6 +14,22 @@ $(function () {
 
   getAllDaysInMonth(now_year, now_month);
 
+  $("button.today").on("click", function () {
+    const now = new Date();
+    const today = now.getDate();
+    var now_month = now.getMonth();
+    var now_year = now.getFullYear();
+
+    Sundays = [];
+    Mondays = [];
+    Tuesdays = [];
+    Wednesdays = [];
+    Thursdays = [];
+    Fridays = [];
+    Saturdays = [];
+    getAllDaysInMonth(now_year, now_month);
+  });
+
   $("button.back").on("click", function () {
     Sundays = [];
     Mondays = [];
@@ -180,6 +196,6 @@ $(function () {
       default:
         break;
     }
-    $("h1.month").html(monthName);
+    $("h2.month").html(monthName);
   }
 });
